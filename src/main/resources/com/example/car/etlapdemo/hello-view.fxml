@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.car.etlapdemo.FoodController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <TableView fx:id="foodTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Név"/>
+            <TableColumn fx:id="categoryColumn" text="Kategória"/>
+            <TableColumn fx:id="priceColumn" text="Ár"/>
+        </columns>
+    </TableView>
+
+    <TextArea fx:id="descriptionArea" prefHeight="100" promptText="Leírás"/>
+
+    <HBox spacing="10">
+        <Button text="Új étel felvétele" onAction="#onNewFoodClick"/>
+        <Button text="Törlés" onAction="#onDeleteClick"/>
+    </HBox>
+
+    <TitledPane text="Áremelés" expanded="false">
+        <VBox spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Fix összeg (Ft):"/>
+                <Spinner fx:id="fixAmountSpinner" prefWidth="100"/>
+                <Button text="Emelés fix összeggel" onAction="#onFixIncrease"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Százalék (%):"/>
+                <Spinner fx:id="percentSpinner" prefWidth="100"/>
+                <Button text="Emelés százalékkal" onAction="#onPercentIncrease"/>
+            </HBox>
+        </VBox>
+    </TitledPane>
+</VBox>
